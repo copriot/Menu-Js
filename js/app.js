@@ -1,5 +1,5 @@
 import { buttonsData, menu} from "./db.js";
-import { elements } from "./helpers.js";
+import { calculatePrice, elements } from "./helpers.js";
 //Sayfa yüklendiğinde ekrana renderMenuItems fonksiyonunu çalıştır
 document.addEventListener("DOMContentLoaded",()=>{
     renderButtons();
@@ -19,7 +19,7 @@ function renderMenuItems(menuItems) {
     <div>
       <div class="d-flex justify-content-between bg-">
         <h5>${item.title}</h5>
-        <p class="text-success">${item.price}₺</p>
+        <p class="text-success">${calculatePrice(item.price)}₺</p>
       </div>
       <p class="lead"
         >${item.desc}</p
